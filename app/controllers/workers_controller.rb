@@ -10,7 +10,7 @@ class WorkersController < ApplicationController
 
   # GET /workers/1
   def show
-    render json: @worker
+    @worker
   end
 
   # POST /workers
@@ -18,7 +18,7 @@ class WorkersController < ApplicationController
     @worker = Worker.new(worker_params)
 
     if @worker.save
-      render json: @worker, status: :created, location: @worker
+      @worker
     else
       render json: @worker.errors, status: :unprocessable_entity
     end

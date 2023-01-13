@@ -15,10 +15,16 @@ class GamesController < ApplicationController
 
   # POST /games
   def create
-    @games = Game.new(game_params)
+    @game = Game.new(game_params)
 
     if @game.save
-      render json: @game, status: :created, game: @game
+      @workers = []
+      @game.couples.each do |c|
+        @worker_1 = Worker.find(c.worker_1_id)
+        @worker_2 = Worker.find(c.worker_2_id)
+        @workers.push([@worker_1, @worker_2])
+      end
+      @game
     else
       render json: @game.errors, status: :unprocessable_entity
     end
@@ -32,6 +38,6 @@ class GamesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def game_params
-      params.require(:game).permit(:name)
+      params.require(:game).permit(:year_game)
     end
 end

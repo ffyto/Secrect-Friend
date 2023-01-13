@@ -10,22 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_12_190953) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_13_042139) do
   create_table "couples", force: :cascade do |t|
     t.integer "worker_1_id"
     t.integer "worker_2_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "game_id", null: false
+    t.index ["game_id"], name: "index_couples_on_game_id"
   end
 
   create_table "games", force: :cascade do |t|
     t.integer "year_game"
-    t.integer "couple_id", null: false
-    t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["couple_id"], name: "index_games_on_couple_id"
-    t.index ["user_id"], name: "index_games_on_user_id"
+    t.integer "worker_without_play"
   end
 
   create_table "locations", force: :cascade do |t|
@@ -42,7 +41,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_12_190953) do
     t.index ["location_id"], name: "index_workers_on_location_id"
   end
 
-  add_foreign_key "games", "couples"
-  add_foreign_key "games", "users"
+  add_foreign_key "couples", "games"
   add_foreign_key "workers", "locations"
 end

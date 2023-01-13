@@ -3,5 +3,12 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+locations = Location.create([{name: 'Tecnología'}, {name: 'Finanzas'}])
+Worker.create([
+  { name: "Mauricio Arango", location_id: locations.first.id },
+  { name: "Ana Baena", location_id: locations.first.id },
+  { name: "Francisco Lopera", location_id: locations.first.id },
+  { name: "Sara Arango", location_id: locations.first.id },
+  { name: "Celeste Ochoa", location_id: locations.first.id }
+  ])
+

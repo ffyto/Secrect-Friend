@@ -22,7 +22,7 @@ class GamesController < ApplicationController
       @game.couples.each do |c|
         @worker_1 = Worker.find(c.worker_1_id)
         @worker_2 = Worker.find(c.worker_2_id)
-        @workers.push([@worker_1, @worker_2])
+        @workers.push({couple_id: c.id, player_1: @worker_1, player_2: @worker_2})
       end
       @game
     else

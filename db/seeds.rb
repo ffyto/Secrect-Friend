@@ -9,6 +9,10 @@ Worker.create([
   { name: "Ana Baena", location_id: locations.first.id },
   { name: "Francisco Lopera", location_id: locations.first.id },
   { name: "Sara Arango", location_id: locations.first.id },
-  { name: "Celeste Ochoa", location_id: locations.first.id }
+  { name: "Celeste Ochoa", location_id: locations.first.id },
+  { name: "Alberto Echeverri", location_id: locations.first.id },
+  { name: "Gertrudiz Ospina", location_id: locations.first.id },
+  { name: "Paquita Gallego", location_id: locations.first.id },
+  { name: "Alejandro Builes", location_id: locations.first.id }
   ])
 

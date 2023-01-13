@@ -19,5 +19,6 @@ class Game < ApplicationRecord
     #El self es ahora el registro que está siendo modificado por estar dentro del callback
     self.couples = couples_data[:couples]
     self.worker_without_play = couples_data[:worker_without_play]
+    self.save
   end
 end

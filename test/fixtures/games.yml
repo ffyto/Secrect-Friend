@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  year_game: 1
+  couple: one
+  user: one
+
+two:
+  year_game: 1
+  couple: two
+  user: two

@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  worker_1_id: 1
+  worker_2_id: 1
+
+two:
+  worker_1_id: 1
+  worker_2_id: 1
